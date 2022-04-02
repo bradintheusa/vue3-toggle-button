@@ -1,12 +1,14 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
+import { ref } from 'vue'
 import Vue3ToggleButton from './components/Vue3ToggleButton.vue'
+
+const isActive = ref(true);
 </script>
 
 <template>
 
-  <Vue3ToggleButton  :handleColor="'#302010'"> </Vue3ToggleButton>
+  <Vue3ToggleButton v-model="isActive" :handleColor="'#302010'"> </Vue3ToggleButton>
+  <p>Value:  {{isActive}}</p>
 </template>
 
 <style>

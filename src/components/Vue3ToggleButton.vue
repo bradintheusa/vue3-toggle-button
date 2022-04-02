@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+const emit = defineEmits(['update:isActive']);
 const props = defineProps({
   handleDiameter: {
     type: String,
@@ -62,6 +63,7 @@ function getHandleDistance() {
 
 function setNewToggleState() {
   isActive.value = !isActive.value;
+  emit('update:isActive', isActive.value);
 }
 
 </script>
