@@ -1,52 +1,54 @@
 <script setup lang="ts">
-// import { ref } from 'vue'
+import { ref } from 'vue'
 const props = defineProps({
-  handle: {
-    diameter: {
-      type: Number,
-      default: 30
-    },
-    distance: {
-      type: Number,
-      default: 40
-    },
-    color: '#fff',
-    borderRadius: "50%",
+  handleDiameter: {
+    type: Number,
+    default: 30
   },
-  track: {
-    color: {
-      type: String,
-      default: '#ccc'
-    },
-    width: {
-      type: Number,
-      default: 70
-    },
-    height: {
-      type: Number,
-      default: 30
-    },
-    activeColor: {
-      type: String,
-      default: '#2196F3'
-    },
-    borderWidth: {
-      type: Number,
-      default: 0
-    },
-    borderRadius: '34px',
+  handleDistance: {
+    type: Number,
+    default: 40
   },
-    active: {
-      type: String,
-      default: '#2196F3'
-    },  
+  handleColor:{
+    type: String,
+    default: '#fff'
+  },
+  handleBorderRadius: {
+    type: String,
+    default: '50%'
+  },
+  trackColor: {
+    type: String,
+    default: '#ccc'
+  },
+  trackWidth: {
+    type: String,
+    default: '70px'
+  },
+  trackHeight: {
+    type: String,
+    default: '30px'
+  },
+  trackActiveColor: {
+    type: String,
+    default: '#2196F3'
+  },
+  trackBorderWidth: {
+    type: Number,
+    default: 0
+  },
+  trackBorderRadius: {
+    type: String,
+    default: '34px'
+  },
   isActive: {
     type: Boolean,
     default: true
   },
 })
 
-const track_activeColor = props.active;
+const track_activeColor = props.trackActive;
+const isActive = ref(props.isActive);
 
 function getHandleDistance() {
   let handleDistance = 0;
@@ -57,31 +59,17 @@ function getHandleDistance() {
   }
   return handleDistance;
 }
-function getStyleObject() {
-  let styleObj = {
-    '--handle-diameter': props.handle.diameter + 'px',
-    '--handle-color': props.handle.color,
-    '--handle-border-radius': props.handle.borderRadius,
-    '--handle-distance': props.getHandleDistance + 'px',
-    '--track-color': props.track.color,
-    '--track-width': props.track.width + 'px',
-    '--track-height': props.track.height + 'px',
-    '--track-active-color': props.track.activeColor,
-    '--track-border-width': props.track.borderWidth + 'px',
-    '--track-border-radius': props.track.borderRadius
-  };
-  return styleObj;
-}
+
 
 function setNewToggleState() {
-  this.isActive = !this.isActive;
+  isActive.value = !isActive.value;
 }
 
 </script>
 
 <template>
   <h1>Loaded</h1>
-  <div class="toggle-slider" :style="getStyleObject">
+  <div class="toggle-slider" >
     <label class="switch">
       <input v-model="isActive" type="checkbox" @click="setNewToggleState" />
       <span class="track">
@@ -93,17 +81,11 @@ function setNewToggleState() {
 </template>
 
 <style scoped lang="scss">
-
-.toggle-slider {
-  color:red;
-  height: 20em;
-  background-color: v-bind('track_activeColor');
-}
 .switch {
   position: relative;
   display: inline-block;
-  width: var(--track-width);
-  height: var(--track-height);
+  width: v-bind(trackWidth);
+  height: v-bind(trackHeight);
   input {
     display: none;
   }
@@ -117,29 +99,29 @@ function setNewToggleState() {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--track-color);
+    background-color: v-bind(trackColor);
     cursor: pointer;
-    border: var(--track-border-width) solid var(--track-color);
-    border-radius: var(--track-border-radius);
+    border: v-bind(trackBorder-width) solid v-bind(trackColor);
+    border-radius: v-bind(trackBorder-radius);
     transition: 0.4s;
     .handle {
       display: flex;
-      width: var(--handle-diameter);
-      height: var(--handle-diameter);
-      background-color: var(--handle-color);
-      border-radius: var(--handle-border-radius);
+      width: v-bind(handleDiameter);
+      height: v-bind(handleDiameter);
+      background-color: v-bind(handleColor);
+      border-radius: v-bind(handleBorderRadius);
       transition: 0.4s;
     }
   }
   input:checked + .track {
-    background-color: var(--track-active-color);
-    border: var(--track-border-width) solid var(--track-active-color);
+    background-color: v-bind(trackActiveColor);
+    border: v-bind(trackBorderWidth) solid v-bind(trackActiveColor);
   }
   input:focus + .track {
-    box-shadow: 0 0 1px var(--track-active-color);
+    box-shadow: 0 0 1px v-bind(trackActiveColor);
   }
   input:checked + .track > .handle {
-    transform: translateX(var(--handle-distance));
+    transform: translateX(v-bind(handleDistance));
   }
 }
 </style>
