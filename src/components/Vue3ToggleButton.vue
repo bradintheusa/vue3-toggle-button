@@ -35,7 +35,7 @@ const props = defineProps({
   },
   trackBorderWidth: {
     type: String,
-    default: '0px'
+    default: '1px'
   },
   trackBorderRadius: {
     type: String,
@@ -47,7 +47,6 @@ const props = defineProps({
   },
 })
 
-const track_activeColor = props.trackActive;
 const isActive = ref(props.isActive);
 
 function getHandleDistance() {

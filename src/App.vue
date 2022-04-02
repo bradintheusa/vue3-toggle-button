@@ -6,7 +6,7 @@ import Vue3ToggleButton from './components/Vue3ToggleButton.vue'
 
 <template>
 
-  <Vue3ToggleButton />
+  <Vue3ToggleButton  :handleColor="'#302010'"> </Vue3ToggleButton>
 </template>
 
 <style>
