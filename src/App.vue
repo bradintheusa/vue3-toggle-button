@@ -3,12 +3,16 @@ import { ref } from 'vue'
 import Vue3ToggleButton from './components/Vue3ToggleButton.vue'
 
 const isActive = ref(true);
+
+function toggle() {
+  isActive.value = !isActive.value;
+}
 </script>
 
 <template>
 
-  <Vue3ToggleButton v-model="isActive" :handleColor="'#302010'"> </Vue3ToggleButton>
-  <p>Value:  {{isActive}}</p>
+  <Vue3ToggleButton v-model:isActive="isActive" :handleColor="'#cc00cc'"> </Vue3ToggleButton>
+  <p @click="toggle">Value:  {{isActive}}</p>
 </template>
 
 <style>

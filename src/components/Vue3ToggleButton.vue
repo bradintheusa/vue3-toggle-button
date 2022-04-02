@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 const emit = defineEmits(['update:isActive']);
 const props = defineProps({
   handleDiameter: {
@@ -48,7 +48,14 @@ const props = defineProps({
   },
 })
 
-const isActive = ref(props.isActive);
+const isActive = computed({
+  get() {
+    return props.isActive
+  },
+  set(value) {
+    emit('update:isActive', value)
+  }
+});
 
 function getHandleDistance() {
   let handleDistance = 0;
@@ -62,6 +69,8 @@ function getHandleDistance() {
 
 
 function setNewToggleState() {
+  console.log(isActive.value);
+  
   isActive.value = !isActive.value;
   emit('update:isActive', isActive.value);
 }
