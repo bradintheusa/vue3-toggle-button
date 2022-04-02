@@ -2,12 +2,12 @@
 import { ref } from 'vue'
 const props = defineProps({
   handleDiameter: {
-    type: Number,
-    default: 30
+    type: String,
+    default: '30px'
   },
   handleDistance: {
-    type: Number,
-    default: 40
+    type: String,
+    default: '40px'
   },
   handleColor:{
     type: String,
@@ -34,8 +34,8 @@ const props = defineProps({
     default: '#2196F3'
   },
   trackBorderWidth: {
-    type: Number,
-    default: 0
+    type: String,
+    default: '0px'
   },
   trackBorderRadius: {
     type: String,
@@ -86,6 +86,7 @@ function setNewToggleState() {
   display: inline-block;
   width: v-bind(trackWidth);
   height: v-bind(trackHeight);
+}  
   input {
     display: none;
   }
@@ -101,9 +102,10 @@ function setNewToggleState() {
     bottom: 0;
     background-color: v-bind(trackColor);
     cursor: pointer;
-    border: v-bind(trackBorder-width) solid v-bind(trackColor);
-    border-radius: v-bind(trackBorder-radius);
+    border: v-bind(trackBorderWidth) solid v-bind(trackColor);
+    border-radius: v-bind(trackBorderRadius);
     transition: 0.4s;
+  }
     .handle {
       display: flex;
       width: v-bind(handleDiameter);
@@ -112,7 +114,7 @@ function setNewToggleState() {
       border-radius: v-bind(handleBorderRadius);
       transition: 0.4s;
     }
-  }
+  
   input:checked + .track {
     background-color: v-bind(trackActiveColor);
     border: v-bind(trackBorderWidth) solid v-bind(trackActiveColor);
@@ -123,5 +125,5 @@ function setNewToggleState() {
   input:checked + .track > .handle {
     transform: translateX(v-bind(handleDistance));
   }
-}
+
 </style>
