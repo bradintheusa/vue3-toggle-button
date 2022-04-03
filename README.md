@@ -1,6 +1,10 @@
-# Vue 3 Toggle button
+# Vue 3 Toggle Button
 
 This is a Vue 3 version of [vue-toggle-btn](https://www.npmjs.com/package/vue-toggle-btn)
+
+
+For use with **Vue 3** and the **Composition API**. I decided to keep in line with the Vue 3 spirit 
+make an easy to use component.  Feedback welcome.
 
 
 # Usage
@@ -35,3 +39,31 @@ Then use it
 
 
 See App.vue for a sample.
+
+```html
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import Vue3ToggleButton from './components/Vue3ToggleButton.vue'
+
+const isActive = ref(true);
+
+function toggle() {
+  isActive.value = !isActive.value;
+}
+</script>
+
+<template>
+
+  <Vue3ToggleButton v-model:isActive="isActive" :handleColor="'#cc00cc'"> </Vue3ToggleButton>
+  <p @click="toggle">Value:  {{isActive}}</p>
+</template>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+</style>
+
+
+```

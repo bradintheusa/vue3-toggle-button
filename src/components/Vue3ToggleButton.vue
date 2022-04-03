@@ -57,20 +57,8 @@ const isActive = computed({
   }
 });
 
-function getHandleDistance() {
-  let handleDistance = 0;
-  if (props.options && props.options.handle && props.options.track) {
-    handleDistance = props.options.track.width - props.options.handle.diameter;
-  } else {
-    handleDistance = props.handle.distance;
-  }
-  return handleDistance;
-}
-
 
 function setNewToggleState() {
-  console.log(isActive.value);
-  
   isActive.value = !isActive.value;
   emit('update:isActive', isActive.value);
 }
