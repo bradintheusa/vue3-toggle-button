@@ -6,9 +6,9 @@ import path from 'path';
 export default defineConfig({
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/components/index.ts'),
+      entry: path.resolve(__dirname, './index.js'),
       name: 'vue3-toggle-button',
-      fileName: (format) => `index.${format}.js`,
+      fileName: (format) => `vue3-toggle-button.${format}.js`,
     },
     rollupOptions: {
       external: ['vue'],

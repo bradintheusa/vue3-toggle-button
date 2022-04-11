@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import Vue3ToggleButton from './components/Vue3ToggleButton.vue'
+import { ref } from 'vue';
+import Vue3ToggleButton from 'vue3-toggle-button';
 
 const isActive = ref(true);
 

@@ -4,7 +4,7 @@
   "version": "0.0.3",
   "main": "./dist/index.umd.js",
   "module": "./dist/index.es.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/index.es.js",
@@ -12,12 +12,10 @@
     }
   },
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "buildts": "vite build && vue-tsc --emitDeclarationOnly",
-    "preview": "vite preview"
+    "dev": "vite"
   },
   "dependencies": {
+    "vue3-toggle-button": "file:../dist/",
     "vue": "^3.2.25"
   },
   "devDependencies": {
