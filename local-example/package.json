@@ -9,7 +9,7 @@
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "brad-button" : "file:../component/",
+    "vue3-toggle-button" : "file:../component/",
     "vue": "^3.2.37"
   },
   "devDependencies": {

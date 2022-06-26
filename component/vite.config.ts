@@ -15,8 +15,8 @@ export default defineConfig({
     minify: 'terser',
     lib: {
       entry: path.resolve(__dirname, 'lib/main.ts'),
-      name: 'brad-button',
-      fileName: (format) => `brad-button.${format}.js`
+      name: 'vue3-toggle-button',
+      fileName: (format) => `vue3-toggle-button.${format}.js`
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled

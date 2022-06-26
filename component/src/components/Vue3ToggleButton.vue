@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import {  computed } from 'vue'
 const emit = defineEmits(['update:isActive']);
 const props = defineProps({
   handleDiameter: {

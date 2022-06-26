@@ -1,13 +1,14 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import BradButton from "./components/BradButton.vue";
+import Vue3ToggleButton from "./components/Vue3ToggleButton.vue";
 </script>
 
 <template>
   <h1>Component Test</h1>
-
+  <p>Brad Example</p>
   <BradButton></BradButton>
+  <p>Toggle Example</p>
+  <Vue3ToggleButton></Vue3ToggleButton>
   <footer>
 
   </footer>

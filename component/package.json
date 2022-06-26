@@ -1,5 +1,5 @@
 {
-  "name": "brad-button",
+  "name": "vue3-toggle-button",
   "version": "1.0.0",
   "author": {
     "email": "bradintheusa@gmail.com",
@@ -21,15 +21,16 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/brad-button.umd.js",
-  "module": "./dist/brad-button.es.js",
+  "main": "./dist/vue3-toggle-button.umd.js",
+  "module": "./dist/vue3-toggle-button.es.js",
   "exports": {
     ".": {
-      "import": "./dist/brad-button.es.js",
-      "require": "./dist/brad-button.umd.js"
+      "import": "./dist/vue3-toggle-button.es.js",
+      "require": "./dist/vue3-toggle-button.umd.js"
     }
   },
   "dependencies": {
+    "sass": "^1.53.0",
     "terser": "^5.14.1",
     "vue": "^3.2.25"
   },
