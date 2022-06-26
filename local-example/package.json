@@ -9,7 +9,7 @@
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "vue3-toggle-button" : "file:../component/",
+    "vue3-toggle-button" : "file:..",
     "vue": "^3.2.37"
   },
   "devDependencies": {
