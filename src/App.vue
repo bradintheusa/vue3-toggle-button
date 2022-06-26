@@ -16,7 +16,7 @@ function callback(value: boolean) {
   <p>Toggle Example</p>
   <p>Value: {{ isChecked }}</p>
   <p>
-    <Vue3ToggleButton v-model:isActive="isChecked" @on-change="callback"></Vue3ToggleButton>
+    <Vue3ToggleButton v-model:isActive="isChecked" @on-change="callback" :handleColor="'#213381'"></Vue3ToggleButton>
   </p>
 
   <footer>
