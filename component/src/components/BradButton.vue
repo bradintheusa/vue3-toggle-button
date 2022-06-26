@@ -3,5 +3,5 @@
 </script>
 
 <template>
-  <h1>Brad is here</h1>
+  <h1>Brad toggle button</h1>
 </template>
