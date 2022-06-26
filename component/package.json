@@ -1,6 +1,6 @@
 {
   "name": "vue3-toggle-button",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "author": {
     "email": "bradintheusa@gmail.com",
     "name": "Brad Evans",
@@ -9,7 +9,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bradintheusa/vu3-component-sandbox"
+    "url": "https://github.com/bradintheusa/vu3-toggle-button"
   },
   "scripts": {
     "dev": "vite",

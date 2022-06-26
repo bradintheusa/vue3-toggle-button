@@ -1,6 +1,7 @@
 # Vue 3 Toggle Button
 
 This is a Vue 3 version of [vue-toggle-btn](https://www.npmjs.com/package/vue-toggle-btn)
+Some code was based on work by [Max Leiter](https://maxleiter.com/)
 
 
 For use with **Vue 3** and the **Composition API**. I decided to keep in line with the Vue 3 spirit 

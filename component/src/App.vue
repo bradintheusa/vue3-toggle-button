@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import {ref} from 'vue'
-import BradButton from "./components/BradButton.vue";
+import { ref } from 'vue'
 import Vue3ToggleButton from "./components/Vue3ToggleButton.vue";
 
 var isChecked = ref(true);
 
-function callback(value :boolean) {
-  console.log("Clicked: %s" , value);
-  
+function callback(value: boolean) {
+  console.log("Clicked: %s", value);
+
 }
 
 </script>
@@ -15,8 +14,11 @@ function callback(value :boolean) {
 <template>
   <h1>Component Test</h1>
   <p>Toggle Example</p>
-  Value: {{isChecked}}
-  <Vue3ToggleButton v-model:isActive="isChecked" @on-change="callback"></Vue3ToggleButton>
+  <p>Value: {{ isChecked }}</p>
+  <p>
+    <Vue3ToggleButton v-model:isActive="isChecked" @on-change="callback"></Vue3ToggleButton>
+  </p>
+
   <footer>
 
   </footer>
