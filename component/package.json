@@ -1,0 +1,47 @@
+{
+  "name": "brad-button",
+  "version": "1.0.0",
+  "author": {
+    "email": "bradintheusa@gmail.com",
+    "name": "Brad Evans",
+    "url": "https://rightclick.com.au"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bradintheusa/vu3-component-sandbox"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && vue-tsc --emitDeclarationOnly --project tsconfig.dist.json && move dist/lib dist/types && del favicon.ico",
+    "build:site": "vue-tsc --noEmit --project tsconfig.site.json && vite --config vite.site.config.ts build",
+    "preview": "vite preview"
+  },
+  "types": "./dist/types/main.d.ts",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/brad-button.umd.js",
+  "module": "./dist/brad-button.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/brad-button.es.js",
+      "require": "./dist/brad-button.umd.js"
+    }
+  },
+  "dependencies": {
+    "terser": "^5.14.1",
+    "vue": "^3.2.25"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.25"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.40",
+    "@types/sortablejs": "^1.13.0",
+    "@vitejs/plugin-vue": "3.0.0-beta.0",
+    "typescript": "^4.5.4",
+    "vite": "3.0.0-beta.2",
+    "vue-tsc": "^0.38.2"
+  }
+}
