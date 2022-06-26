@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import {  computed } from 'vue'
-const emit = defineEmits(['update:isActive']);
+import { ref, computed } from 'vue'
+const emit = defineEmits(['update:isActive','on-change']);
 const props = defineProps({
   handleDiameter: {
     type: String,
@@ -48,25 +48,19 @@ const props = defineProps({
   },
 })
 
-const isActive = computed({
-  get() {
-    return props.isActive
-  },
-  set(value) {
-    emit('update:isActive', value)
-  }
-});
+const isActive = ref(props.isActive);
 
 
 function setNewToggleState() {
   isActive.value = !isActive.value;
   emit('update:isActive', isActive.value);
+  emit('on-change', isActive.value);
 }
 
 </script>
 
 <template>
-  <h1>Loaded</h1>
+
   <div class="toggle-slider" >
     <label class="switch">
       <input v-model="isActive" type="checkbox" @click="setNewToggleState" />
@@ -75,7 +69,7 @@ function setNewToggleState() {
       </span>
     </label>
   </div>
-  <h1>----</h1>
+
 </template>
 
 <style scoped lang="scss">

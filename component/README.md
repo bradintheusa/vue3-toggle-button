@@ -1,6 +1,6 @@
-# Brad Button
+# Vue3 Toggle Button
 
 
 
 
-Brad on work by Max Leiter
+Based on work by Max Leiter
