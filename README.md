@@ -6,7 +6,10 @@ For use with **Vue 3**, TypeScript and the **Composition API**. Feedback welcome
 ![Example](screenshots/toggle.png)
 
 # Usage
-Install via NPM ```npm install vue3-toggle-button```
+Install via NPM
+ ```
+ npm install vue3-toggle-button
+ ```
 
 Then require in your project:
 ```ts
