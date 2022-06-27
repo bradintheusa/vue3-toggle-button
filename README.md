@@ -13,7 +13,8 @@ Install via NPM ```npm i Vue3ToggleButton```
 
 Then require in your project:
 ```ts
-import Vue3ToggleButton from './components/Vue3ToggleButton.vue'
+import { Vue3ToggleButton } from 'vue3-toggle-button'
+import '../node_modules/vue3-toggle-button/dist/style.css'
 
 ```
 
