@@ -18,6 +18,6 @@
     "outDir": "dist",
     "allowSyntheticDefaultImports": true
   },
-  "files": ["lib/main.ts", "src/components/BradButton.vue" ],
+  "files": ["lib/main.ts", "src/components/Vue3ToggleButton.vue" ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
