@@ -9,7 +9,7 @@ make an easy to use component.  Feedback welcome.
 
 
 # Usage
-Install via NPM ```npm i Vue3ToggleButton```
+Install via NPM ```npm install vue3-toggle-button```
 
 Then require in your project:
 ```ts
@@ -40,7 +40,7 @@ Then use it
 | trackBorderRadius | string | ```34px``` | Sets the track border radius |
 
 
-See App.vue for a sample.
+See App.vue for a sample. Therr is also a folder called local-example with a stand alone example.
 
 ```html
 
@@ -50,7 +50,7 @@ import Vue3ToggleButton from './components/Vue3ToggleButton.vue'
 
 const isActive = ref(true);
 
-function toggle() {
+function toggle(value :boolean) {
   isActive.value = !isActive.value;
 }
 </script>
@@ -58,7 +58,7 @@ function toggle() {
 <template>
 
   <Vue3ToggleButton v-model:isActive="isActive" :handleColor="'#cc00cc'"> </Vue3ToggleButton>
-  <p @click="toggle">Value:  {{isActive}}</p>
+  <p  @on-change="toggle">Value:  {{isActive}}</p>
 </template>
 
 <style>
