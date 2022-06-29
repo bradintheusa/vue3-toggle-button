@@ -1,62 +1,44 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-const emit = defineEmits(['update:isActive','on-change']);
-const props = defineProps({
-  handleDiameter: {
-    type: String,
-    default: '30px'
-  },
-  handleDistance: {
-    type: String,
-    default: '40px'
-  },
-  handleColor:{
-    type: String,
-    default: '#fff'
-  },
-  handleBorderRadius: {
-    type: String,
-    default: '50%'
-  },
-  trackColor: {
-    type: String,
-    default: '#ccc'
-  },
-  trackWidth: {
-    type: String,
-    default: '70px'
-  },
-  trackHeight: {
-    type: String,
-    default: '30px'
-  },
-  trackActiveColor: {
-    type: String,
-    default: '#2196F3'
-  },
-  trackBorderWidth: {
-    type: String,
-    default: '1px'
-  },
-  trackBorderRadius: {
-    type: String,
-    default: '34px'
-  },
-  isActive: {
-    type: Boolean,
-    default: true
-  },
-})
+import {ref} from 'vue';
+
+const props = withDefaults(defineProps<{
+  handleDiameter?: string;
+  handleDistance?: string;
+  handleColor?: string;
+  handleBorderRadius?: string;
+  trackColor?: string;
+  trackWidth?: string;
+  trackHeight?: string;
+  trackActiveColor?: string;
+  trackBorderWidth?: string;
+  trackBorderRadius?: string;
+  isActive?: boolean;
+}>(), {
+  handleDiameter: '30px',
+  handleDistance: '40px',
+  handleColor: '#fff',
+  handleBorderRadius: '50%',
+  trackColor: '#ccc',
+  trackWidth: '70px',
+  trackHeight: '30px',
+  trackActiveColor: '#2196f3',
+  trackBorderWidth: '1px',
+  trackBorderRadius: '34px',
+  isActive: true,
+});
+
+const emit = defineEmits<{
+  (event: 'update:isActive', isActive: boolean): void;
+  (event: 'onChange', isActive: boolean): void;
+}>();
 
 const isActive = ref(props.isActive);
-
 
 function setNewToggleState() {
   isActive.value = !isActive.value;
   emit('update:isActive', isActive.value);
-  emit('on-change', isActive.value);
+  emit('onChange', isActive.value);
 }
-
 </script>
 
 <template>
@@ -78,7 +60,7 @@ function setNewToggleState() {
   display: inline-block;
   width: v-bind(trackWidth);
   height: v-bind(trackHeight);
-}  
+}
   input {
     display: none;
   }
@@ -106,7 +88,7 @@ function setNewToggleState() {
       border-radius: v-bind(handleBorderRadius);
       transition: 0.4s;
     }
-  
+
   input:checked + .track {
     background-color: v-bind(trackActiveColor);
     border: v-bind(trackBorderWidth) solid v-bind(trackActiveColor);
