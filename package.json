@@ -1,6 +1,6 @@
 {
   "name": "vue3-toggle-button",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": {
     "email": "bradintheusa@gmail.com",
     "name": "Brad Evans",
@@ -31,8 +31,7 @@
   },
   "dependencies": {
     "sass": "^1.53.0",
-    "terser": "^5.14.1",
-    "vue": "^3.2.37"
+    "terser": "^5.14.1"
   },
   "peerDependencies": {
     "vue": "^3.2.37"
