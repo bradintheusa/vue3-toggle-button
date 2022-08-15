@@ -40,7 +40,7 @@ Then use it
 | trackBorderRadius | string | ```34px``` | Sets the track border radius |
 
 
-See App.vue for a sample. Therr is also a folder called local-example with a stand alone example.
+See App.vue for a sample. There is also a folder called local-example with a stand alone example.
 
 ```html
 
