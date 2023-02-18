@@ -19,16 +19,10 @@
   },
   "types": "./dist/types/main.d.ts",
   "files": [
-    "dist"
+    "dist/*"
   ],
   "main": "./dist/vue3-toggle-button.umd.js",
   "module": "./dist/vue3-toggle-button.es.js",
-  "exports": {
-    ".": {
-      "import": "./dist/vue3-toggle-button.es.js",
-      "require": "./dist/vue3-toggle-button.umd.js"
-    }
-  },
   "dependencies": {
     "sass": "^1.53.0",
     "terser": "^5.14.1"
